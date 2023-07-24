@@ -1,0 +1,15 @@
+{
+    "git.autofetch": true,
+    "explorer.confirmDragAndDrop": false,
+    "git.confirmSync": false,
+    "editor.inlineSuggest.enabled": true,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "python.linting.pylintArgs": [
+        "--disable=missing-module-docstring",
+        "--disable=missing-class-docstring",
+        "--disable=missing-function-docstring"
+      ],
+      "explorer.confirmDelete": false,
+      "terminal.integrated.fontFamily": "MesloLGS NF",
+      "editor.fontFamily": "MesloLGS NF"
+}
