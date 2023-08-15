@@ -1,0 +1,6 @@
+[user]
+    name = Cristobal Gonzalez
+    email = cristobal@cristobal-lab.net
+[alias]
+    co = checkout
+    br = branch

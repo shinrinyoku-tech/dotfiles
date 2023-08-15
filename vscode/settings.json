@@ -11,5 +11,14 @@
       ],
       "explorer.confirmDelete": false,
       "terminal.integrated.fontFamily": "MesloLGS NF",
-      "editor.fontFamily": "MesloLGS NF"
+      "editor.fontFamily": "MesloLGS NF",
+      "workbench.editorAssociations": {
+        "*.gif": "gifPlayer.player"
+      },
+      "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false
+      }
 }

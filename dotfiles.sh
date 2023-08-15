@@ -1,9 +1,13 @@
 #!/bin/bash
 
 
+# Configure GitHub
+rm ~/.gitconfig
+ln -s ~/.dotfiles/github/gitconfig ~/.gitconfig
+
 # Configure zsh
 rm ~/.zshrc
-ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
 
 
 # Configure vscode
