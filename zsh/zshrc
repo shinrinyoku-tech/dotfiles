@@ -5,13 +5,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Start the SSH agent if not running
-if ! pgrep -q ssh-agent; then
-    eval $(ssh-agent -s)
-fi
-
-# Add default SSH key
-ssh-add
+# Function to start SSH agent and add key
+start_ssh_agent() {
+    if ! pgrep -q ssh-agent; then
+        eval $(ssh-agent -s)
+    fi
+    ssh-add ~/.ssh/nl-cris-win
+}
 
 
 # Which plugins would you like to load?
