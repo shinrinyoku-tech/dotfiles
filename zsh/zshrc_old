@@ -7,30 +7,12 @@ fi
 
 # Function to start SSH agent and add key
 start_ssh_agent() {
-    if ! ssh-add -l &>/dev/null; then
+    if ! pgrep -q ssh-agent; then
         eval $(ssh-agent -s)
     fi
-    ssh-add ~/.ssh/$1
+    ssh-add ~/.ssh/nl-cris-win
 }
 
-load_project_ssh_key() {
-    case "$1" in
-        "github")
-            start_ssh_agent "cristobal-clab-git_key"
-            ;;
-        "aws")
-            start_ssh_agent "project2_id_rsa"
-            ;;
-        # Add more projects and SSH keys as needed
-        *)
-            echo "Unknown project"
-            ;;
-    esac
-}
-
-
-#Autoload SSH keys for projects
-load_project_ssh_key "github"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -166,6 +148,3 @@ alias ps='ps auxf'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Set quick prompt
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
