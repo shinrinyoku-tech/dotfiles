@@ -21,5 +21,14 @@
         "markdown": true,
         "scminput": false
       },
-      "liveServer.settings.donotShowInfoMsg": true
+    "liveServer.settings.donotShowInfoMsg": true,
+    "security.allowedUNCHosts": [
+        "wsl.localhost"
+    ],
+    "settingsSync.ignoredExtensions": [
+      "vscjava.vscode-java-debug",
+      "vscjava.vscode-java-pack",
+      "alefragnani.project-manager"
+    ],
+    "workbench.colorTheme": "One Dark Pro Mix"
 }

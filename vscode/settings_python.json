@@ -1,0 +1,22 @@
+{
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "workbench.colorTheme": "One Dark Pro Mix",
+    "workbench.sideBar.location": "right",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editor.showTabs": false,
+    "editor.minimap.enabled": false,
+    "editor.scrollbar.vertical": "auto",
+    "editor.overviewRulerBorder": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.formatOnSave": true,
+    "editor.guides.indentation": false,
+    "editor.glyphMargin": false,
+    "breadcrumbs.enabled": false,
+    "indenticator.width": 0.5,
+    "indenticator.color.dark": "rgba(255, 255, 255, 0.1)",
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.wordBasedSuggestions": false
+    }
+
+}
