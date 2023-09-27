@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Get the active Windows username
-windows_user=$(powershell.exe '$env:USERNAME' | tr -d '\r')
-echo "Windows username: $windows_user"
-
 # Check if running in WSL
 if grep -q "microsoft" /proc/version; then
     echo "Running in Windows Subsystem for Linux (WSL)."
+
+    # Get the active Windows username
+    windows_user=$(powershell.exe '$env:USERNAME' | tr -d '\r')
+    echo "Windows username: $windows_user"
 
     # WSL configuration
     # Configure GitHub
@@ -16,7 +16,7 @@ if grep -q "microsoft" /proc/version; then
     # Configure zsh
     rm ~/.zshrc
     ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
-#/mnt/c/Users/$windows_user/AppData/Roaming/Code/User/
+    #/mnt/c/Users/$windows_user/AppData/Roaming/Code/User/
     # Configure vscode
     ## Vscode settings
     rm /mnt/c/Users/$windows_user/AppData/Roaming/Code/User/settings.json 
@@ -37,6 +37,10 @@ else
     rm ~/.gitconfig
     ln -s ~/.dotfiles/github/gitconfig ~/.gitconfig
 
+    # Configure Logseq
+    rm -r ~/.logseq
+    ln -s ~/.dotfiles/logseq ~/.logseq
+    
     # Configure zsh
     rm ~/.zshrc
     ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
