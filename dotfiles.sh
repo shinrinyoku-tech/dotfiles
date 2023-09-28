@@ -13,15 +13,27 @@ if grep -q "microsoft" /proc/version; then
     rm ~/.gitconfig
     ln -s ~/.dotfiles/github/gitconfig ~/.gitconfig
 
+    # Configure Logseq
+    #rm -r ~/.logseq
+    rm -rf /mnt/c/Users/$windows_user/.logseq
+    cp -r ~/.dotfiles/logseq /mnt/c/Users/$windows_user/.logseq
+    
+
     # Configure zsh
     rm ~/.zshrc
     ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
     #/mnt/c/Users/$windows_user/AppData/Roaming/Code/User/
+    
     # Configure vscode
     ## Vscode settings
     rm /mnt/c/Users/$windows_user/AppData/Roaming/Code/User/settings.json 
     cp ~/.dotfiles/vscode/settings.json /mnt/c/Users/$windows_user/AppData/Roaming/Code/User/settings.json 
+
     ## Python settings
+    rm /mnt/c/Users/$windows_user/AppData/Roaming/Code/User/settings_python.json
+    cp ~/.dotfiles/vscode/settings_python.json /mnt/c/Users/$windows_user/AppData/Roaming/Code/User/settings_python.json
+
+    ## Vscode Profile
     rm /mnt/c/Users/$windows_user/AppData/Roaming/Code/User/settings_python.json
     cp ~/.dotfiles/vscode/settings_python.json /mnt/c/Users/$windows_user/AppData/Roaming/Code/User/settings_python.json
 
