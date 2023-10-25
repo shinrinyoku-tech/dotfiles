@@ -18,6 +18,8 @@ if grep -q "microsoft" /proc/version; then
     # Configure zsh
     rm $HOME/.zshrc
     ln -s $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
+    rm $HOME/.p10k.zsh
+    ln -s $HOME/.dotfiles/zsh/p10k.zsh $HOME/.p10k.zsh
 
 else
     echo "Running in a native Linux environment."
