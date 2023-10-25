@@ -13,11 +13,11 @@ if grep -q "microsoft" /proc/version; then
     # WSL configuration
     # Configure GitHub
     rm $HOME/.gitconfig
-    ln -s $HOME/.dotfiles/github/gitconfig ~/.gitconfig
+    ln -s $HOME/.dotfiles/github/gitconfig $HOME/.gitconfig
 
     # Configure zsh
     rm $HOME/.zshrc
-    ln -s $HOME/.dotfiles/zsh/zshrc ~/.zshrc
+    ln -s $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
 
 else
     echo "Running in a native Linux environment."
@@ -25,10 +25,10 @@ else
     # Native Linux configuration
     # Configure GitHub
     # rm ~/.gitconfig
-    # ln -s ~/.dotfiles/github/gitconfig ~/.gitconfig
+    # ln -s ~/.dotfiles/github/gitconfig $HOME/.gitconfig
 
     # Configure zsh
     rm $HOME/.zshrc
-    ln -s $HOME/.dotfiles/zsh/zshrc ~/.zshrc
+    ln -s $HOME/.dotfiles/zsh/zshrc $HOME/.zshrc
 
 fi
