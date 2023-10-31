@@ -41,6 +41,10 @@ if grep -q "microsoft" /proc/version; then
     rm /mnt/c/Users/$windows_user/AppData/Roaming/Code/User/tasks.json
     cp ~/.dotfiles/vscode/tasks.json /mnt/c/Users/$windows_user/AppData/Roaming/Code/User/tasks.json
 
+    ## Terminal Setttings
+    rm /mnt/c/Users/$windows_user/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
+    cp ~/.dotfiles/terminal/settings_terminal.json /mnt/c/Users/$windows_user/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
+
 else
     echo "Running in a native Linux environment."
 
