@@ -22,6 +22,8 @@ if grep -q "microsoft" /proc/version; then
     # Configure zsh
     rm ~/.zshrc
     ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
+    rm ~/.p10k.zsh
+    ln -s ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
     #/mnt/c/Users/$windows_user/AppData/Roaming/Code/User/
     
     # Configure vscode
@@ -43,7 +45,7 @@ if grep -q "microsoft" /proc/version; then
 
     ## Terminal Setttings
     rm /mnt/c/Users/$windows_user/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
-    cp ~/.dotfiles/terminal/settings_terminal.json /mnt/c/Users/$windows_user/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
+    cp ~/.dotfiles/terminal/terminal_settings.json /mnt/c/Users/$windows_user/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
 
 else
     echo "Running in a native Linux environment."
@@ -60,6 +62,8 @@ else
     # Configure zsh
     rm ~/.zshrc
     ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
+    rm ~/.p10k.zsh
+    ls -s ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 
     # Configure vscode
     ## Vscode settings
