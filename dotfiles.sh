@@ -63,7 +63,7 @@ else
     rm ~/.zshrc
     ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
     rm ~/.p10k.zsh
-    ls -s ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
+    ln -s ~/.dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 
     # Configure vscode
     ## Vscode settings

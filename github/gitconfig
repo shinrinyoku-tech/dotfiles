@@ -5,3 +5,5 @@
 [alias]
     co = checkout
     br = branch
+[init]
+	defaultBranch = main
