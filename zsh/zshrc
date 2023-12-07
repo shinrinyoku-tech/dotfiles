@@ -32,6 +32,10 @@ load_project_ssh_key() {
 #Autoload SSH keys for projects
 load_project_ssh_key "github"
 
+## Run the GitHub Container Registry login script
+sh ~/scripts/sh-git-docker.sh
+
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
