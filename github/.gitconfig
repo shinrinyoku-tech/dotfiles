@@ -1,0 +1,9 @@
+[user]
+    name = Cristobal Gonzalez
+    email = cristobal@cristobal-lab.net
+    username = cristobalgonzalezdiaz
+[alias]
+    co = checkout
+    br = branch
+[init]
+	defaultBranch = main
