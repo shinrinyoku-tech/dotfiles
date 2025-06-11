@@ -1,0 +1,13 @@
+.
+├── README.md
+├── dotfiles_tree.txt
+├── github
+├── nvim
+├── setup-dotfiles.sh
+├── tmux
+│   └── temux.conf
+├── yazi
+├── zsh
+└── zsh_dotfiles.sh
+
+6 directories, 5 files
