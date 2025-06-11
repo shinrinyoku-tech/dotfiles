@@ -1,0 +1,19 @@
+[manager]
+# Navigation
+up = ["k", "Up"]
+down = ["j", "Down"]
+left = ["h", "Left"]
+right = ["l", "Right"]
+
+# Open file or directory
+open = ["Enter", "o"]
+
+# Close Yazi
+quit = ["q"]
+
+# Toggle preview
+toggle_preview = ["p"]
+
+# Refresh the view
+refresh = ["r"]
+

@@ -19,35 +19,25 @@ start_ssh_agent() {
     ssh-add -l | grep "$1" &>/dev/null || ssh-add -q ~/.ssh/$1 &>/dev/null
 }
 
-
-
-#start_ssh_agent() {
-#    if ! ssh-add -l &>/dev/null; then
-#        eval $(ssh-agent -s)
-#    fi
-#    ssh-add ~/.ssh/$1
-#}
-
-#load_project_ssh_key() {
-#    case "$1" in
-#        "github")
-#            start_ssh_agent "cristobal-clab-git_key"
-#            ;;
-#        "aws")
-#            start_ssh_agent "project2_id_rsa"
-#            ;;
+load_project_ssh_key() {
+    case "$1" in
+        "github")
+            start_ssh_agent "cristobal-clab-git_key"
+            ;;
+        "aws")
+            start_ssh_agent "project2_id_rsa"
+            ;;
         # Add more projects and SSH keys as needed
-#        *)
-#            echo "Unknown project"
-#            ;;
-#    esac
-#}
+        *)
+            echo "Unknown project"
+            ;;
+    esac
+}
 
 # Which plugins would you like to load?
 plugins=(
         git
         zsh-autosuggestions
-	zsh-syntax-highlighting
         docker
         sudo
         history
@@ -55,7 +45,6 @@ plugins=(
         copyfile
         copybuffer
         dirhistory
-	zsh-interactive-cd
 )
 
 # Path to your oh-my-zsh installation.
@@ -93,26 +82,29 @@ alias gitps='git push origin'
 alias gitpl='git pull'
 alias gitb='git br'
 alias gitco='git co'
+## Tmux Alias
+alias tmn='tmux new -s'
+alias tma='tmux attach -t'
+alias tml='tmux ls'
+alias tmk='tmux kill-session -t'
+alias tmka='tmux kill-server'
+alias tmr='tmux source-file ~/.tmux.conf'
+alias tmaor='tmux attach -t $1 || tmux new -s $1'
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/cristobal/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/cristobal/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/cristobal/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/cristobal/miniconda3/bin:$PATH"
-    fi
+# Tmux Plugin Manager (TPM) Integration
+export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
+
+# Load TPM plugins automatically when tmux starts
+if command -v tmux &>/dev/null && [[ -n "$TMUX" ]]; then
+  [[ -s ~/.tmux/plugins/tpm/tpm ]] && source ~/.tmux/plugins/tpm/tpm
 fi
-unset __conda_setup
-# <<< conda initialize <<<
 
+# Launch lazyvim and yazi with shortcuts
+alias nv='nvim'
+alias yz='yazi'
+
+# Reload zsh config
+alias zr='source ~/.zshrc'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/.dotfiles/zsh/.p10k.zsh.
-[[ ! -f ~/.dotfiles/zsh/.p10k.zsh ]] || source ~/.dotfiles/zsh/.p10k.zsh
-
-# Created by `pipx` on 2025-04-07 05:58:28
-export PATH="$PATH:/home/cristobal/.local/bin"

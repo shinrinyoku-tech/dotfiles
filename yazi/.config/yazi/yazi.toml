@@ -1,0 +1,17 @@
+[manager]
+# Enable mouse support
+mouse = true
+
+# Set the default layout to a two-pane view
+layout = "default"
+
+# Set the default sorting method
+sort_by = "alphabetical"
+sort_reverse = false
+sort_case_sensitive = false
+sort_dir_first = true
+
+[preview]
+# Enable file previews
+enable = true
+
