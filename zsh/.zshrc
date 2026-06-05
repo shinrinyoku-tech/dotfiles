@@ -19,20 +19,20 @@ start_ssh_agent() {
     ssh-add -l | grep "$1" &>/dev/null || ssh-add -q ~/.ssh/$1 &>/dev/null
 }
 
-load_project_ssh_key() {
-    case "$1" in
-        "github")
-            start_ssh_agent "cristobal-clab-git_key"
-            ;;
-        "aws")
-            start_ssh_agent "project2_id_rsa"
-            ;;
-        # Add more projects and SSH keys as needed
-        *)
-            echo "Unknown project"
-            ;;
-    esac
-}
+# load_project_ssh_key() {
+#     case "$1" in
+#         "github")
+#             start_ssh_agent "cristobal-clab-git_key"
+#             ;;
+#         "aws")
+#             start_ssh_agent "project2_id_rsa"
+#             ;;
+#         # Add more projects and SSH keys as needed
+#         *)
+#             echo "Unknown project"
+#             ;;
+#     esac
+# }
 
 # Which plugins would you like to load?
 plugins=(
@@ -53,11 +53,15 @@ export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-source $ZSH/oh-my-zsh.sh
+# Safe plugin check
+plugins=(git docker sudo history web-search copyfile copybuffer dirhistory zsh-interactive-cd)
 
-########################
-# ALIASES
-########################
+[[ -d $ZSH/custom/plugins/zsh-autosuggestions ]] && plugins+=("zsh-autosuggestions")
+[[ -d $ZSH/custom/plugins/zsh-syntax-highlighting ]] && plugins+=("zsh-syntax-highlighting")
+
+source "$ZSH/oh-my-zsh.sh"
+
+# Aliases
 alias rm='trash -v'
 alias apt-get='sudo apt-get'
 alias update="sudo apt update && sudo apt upgrade -y"
@@ -108,3 +112,4 @@ alias zr='source ~/.zshrc'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="$HOME/.local/bin:$PATH"
